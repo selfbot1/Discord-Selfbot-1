@@ -19,9 +19,8 @@ class Git:
         This token can give any user complete access to the account.
         https://github.com/settings/tokens is where you make a token.
         '''
-        with open('data/config.json') as f:
-            config = json.load(f)
-            return os.environ.get('GITHUBTOKEN') or config.get('GITHUBTOKEN')
+        
+        return os.environ.get('GITHUBTOKEN')
 
     async def githubusername(self):
         '''Returns Github Username'''
