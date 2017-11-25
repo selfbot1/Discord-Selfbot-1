@@ -843,8 +843,7 @@ class Utility:
             'author': ctx.author,
             'guild': ctx.guild,
             'message': ctx.message,
-            '_': self._last_result,
-            'source': inspect.getsource
+            '_': self._last_result
         }
 
         env.update(globals())
