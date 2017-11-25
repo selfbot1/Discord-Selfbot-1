@@ -927,7 +927,7 @@ class Utility:
         if not await git.starred('PallavBS/Discord-SelfBot-1'): return await ctx.send('**This command is disabled as the user have not starred <https://github.com/PallavBS/Discord-Selfbot-1>**')
         # get username
         username = await git.githubusername()
-        async with self.session.get('https://api.github.com/repos/PallavBS/Discord-Selfbot-1/git/refs/heads/rewrite', headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp:
+        async with self.session.get('https://api.github.com/repos/PallavBS/Discord-Selfbot-1/git/refs/heads/master', headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp:
             if 300 > resp.status >= 200:
                 async with self.session.post(f'https://api.github.com/repos/{username}/Discord-Selfbot-1/merges', json={"head": (await resp.json())['object']['sha'], "base": "rewrite", "commit_message": "Updating Bot"}, headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp2:
                     if 300 > resp2.status >= 200:
