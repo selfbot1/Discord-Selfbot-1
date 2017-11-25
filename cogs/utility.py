@@ -242,7 +242,7 @@ class Utility:
         await msg.delete()
         await killmsg.delete()
 
-    @commands.command(aliases=['d'], pass_context=True)
+    @commands.command(aliases=['d','clean'], pass_context=True)
     async def delete(self, ctx, txt=None, channel=None):
         """Deletes the last message sent or n messages sent. Ex: [p]d 5"""
         if txt:  # If number of seconds/messages are specified
@@ -933,7 +933,7 @@ class Utility:
                     if 300 > resp2.status >= 200:
                         if resp2.status == 204:
                             return await ctx.send('Already at latest version!')
-                        await ctx.send('Bot updated! Restarting...')
+                        await ctx.send('Bot updated! Restarting....')
                     else:
                         if resp2.status == 409:
                             return await ctx.send('Merge conflict, you did some commits that made this fail!')
