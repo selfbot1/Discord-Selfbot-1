@@ -328,7 +328,7 @@ class Utility:
 
     @commands.command(pass_context=True)
     async def poll(self, ctx, *, msg):
-        """Create a strawpoll. Ex: [p]poll Favorite color = Blue | Red | Green"""
+        """Create a strawpoll. Ex: [p]poll Favorite color = Blue | Purple | Green"""
         loop = asyncio.get_event_loop()
         try:
             options = [op.strip() for op in msg.split('|')]
