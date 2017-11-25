@@ -30,7 +30,6 @@ class Utility:
     def __init__(self, bot):
         self.bot = bot
         self.session = aiohttp.ClientSession(loop=self.bot.loop, headers={"User-Agent": "AppuSelfBot"})
-        self.lang_conv = load_json('data/langs.json')
         self._last_embed = None
         self._rtfm_cache = None
         self._last_google = None
