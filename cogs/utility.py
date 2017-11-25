@@ -113,13 +113,7 @@ class Utility:
         dandt, tzerror = self.get_datetime()
         msg = '{:Date: `%d %B %Y`}'.format(dandt)
         await ctx.send(self.bot.bot_prefix + msg)
-
-    @commands.command(pass_context=True)
-    async def code(self, ctx, *, msg):
-        """Write text in code format."""
-        await ctx.message.delete()
-        await ctx.send("```" + msg.replace("`", "") + "```")
-    
+        
     @commands.command(pass_context=True)
     async def toggletime(self, ctx):
         """Toggle between 24 hours time and 12 hours time"""
@@ -248,7 +242,7 @@ class Utility:
         await msg.delete()
         await killmsg.delete()
 
-    @commands.command(aliases=['d'], pass_context=True)
+    @commands.command(aliases=['d','prune','purge'], pass_context=True)
     async def delete(self, ctx, txt=None, channel=None):
         """Deletes the last message sent or n messages sent. Ex: [p]d 5"""
         if txt:  # If number of seconds/messages are specified
