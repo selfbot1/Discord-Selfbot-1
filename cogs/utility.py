@@ -8,6 +8,7 @@ import aiohttp
 import json
 import discord
 import os
+import traceback
 import textwrap
 import glob
 import git
