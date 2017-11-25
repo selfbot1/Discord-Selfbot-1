@@ -926,7 +926,7 @@ class Utility:
         return f'```py\n{e.text}{"^":>{e.offset}}\n{e.__class__.__name__}: {e}```'
     
     @commands.command()
-    async def update(self, ctx):
+    async def updatee(self, ctx):
         '''Auto Update command, checks if you have latest version
         Use tags github-token to find out how to set up this token'''
         git = self.bot.get_cog('Git')
