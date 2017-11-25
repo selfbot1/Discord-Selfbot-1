@@ -13,6 +13,7 @@ import textwrap
 import glob
 import git
 import io
+from contextlib import redirect_stdout
 from PIL import Image
 from PythonGists import PythonGists
 from discord.ext import commands
