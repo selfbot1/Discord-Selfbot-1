@@ -744,7 +744,7 @@ class Utility:
         if len(options) >= 11:
             return await ctx.send(self.bot.bot_prefix + "You must have 9 options or less.")
         if time:
-            time = int(time.strip("time="))
+            time = int(time.strip("time = "))
         else:
             time = 30
         emoji = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣']
