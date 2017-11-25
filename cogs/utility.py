@@ -929,7 +929,7 @@ class Utility:
         username = await git.githubusername()
         async with self.session.get('https://api.github.com/repos/PallavBS/Discord-Selfbot-1/git/refs/heads/master', headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp:
             if 300 > resp.status >= 200:
-                async with self.session.post(f'https://api.github.com/repos/{username}/Discord-Selfbot-1/merges', json={"head": (await resp.json())['object']['sha'], "base": "rewrite", "commit_message": "Updating Bot"}, headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp2:
+                async with self.session.post(f'https://api.github.com/repos/{username}/Discord-Selfbot-1/merges', json={"head": (await resp.json())['object']['sha'], "base": "master", "commit_message": "Updating Bot"}, headers={"Authorization": f"Bearer {git.githubtoken}"}) as resp2:
                     if 300 > resp2.status >= 200:
                         if resp2.status == 204:
                             return await ctx.send('Already at latest version!')
