@@ -242,7 +242,7 @@ class Utility:
         await msg.delete()
         await killmsg.delete()
 
-    @commands.command(aliases=['d','prune','purge'], pass_context=True)
+    @commands.command(aliases=['d'], pass_context=True)
     async def delete(self, ctx, txt=None, channel=None):
         """Deletes the last message sent or n messages sent. Ex: [p]d 5"""
         if txt:  # If number of seconds/messages are specified
